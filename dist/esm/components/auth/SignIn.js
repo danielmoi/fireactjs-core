@@ -148,7 +148,7 @@ export const SignIn = _ref => {
             photoURL: user.photoURL
           }
         }));
-        document.location.href = re.substr(0, 1) === '/' && re.substr(1, 1) !== '/' ? re : '/';
+        document.location.href = re;
       }).catch(error => {
         switch (error.code) {
           case "auth/invalid-email":
