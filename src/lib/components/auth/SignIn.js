@@ -25,7 +25,7 @@ export const SignIn = ({logo, successUrl}) => {
     const title = "Sign In";
 
     const { setAuthUser } = useContext(AuthContext);
-    
+
     const [processing, setProcessing] = useState(false);
     const [error, setError] = useState(null);
     const [email, setEmail] = useState("");
@@ -116,7 +116,7 @@ export const SignIn = ({logo, successUrl}) => {
                                     photoURL: user.photoURL
                                 }
                             }));
-                            document.location.href = re.substr(0,1)==='/'&&re.substr(1,1)!=='/'?re:'/';
+                            document.location.href = re;
                         }).catch(error => {
                             switch(error.code){
                                 case "auth/invalid-email":
@@ -146,14 +146,14 @@ export const SignIn = ({logo, successUrl}) => {
                             Sign In With Email
                         </Typography>
                     </Button>
-                    {(signUpUrl || resetPasswordUrl) && 
+                    {(signUpUrl || resetPasswordUrl) &&
                         <Grid container>
                             {signUpUrl &&
                                 <Grid item xs textAlign="left">
                                     <Link to={signUpUrl} component={RouterLink}>Sign up a new account</Link>
                                 </Grid>
                             }
-                            {resetPasswordUrl && 
+                            {resetPasswordUrl &&
                                 <Grid item textAlign="left">
                                     <Link to={resetPasswordUrl} component={RouterLink}>Reset password</Link>
                                 </Grid>
@@ -163,42 +163,42 @@ export const SignIn = ({logo, successUrl}) => {
                     {providers &&
                         <Typography>OR</Typography>
                     }
-                    {providers && providers.google && 
+                    {providers && providers.google &&
                         <Button type="button" fullWidth variant="outlined" startIcon={<img src={googleSvg} width="16" alt="Google" />} size="large" onClick={() => singleSignOn("google")} disabled={processing}>
                             <Typography component="span" style={{width: `${btWidth}`}}>
                                 Sign In With Google
                             </Typography>
                         </Button>
                     }
-                    {providers && providers.facebook && 
+                    {providers && providers.facebook &&
                         <Button type="button" fullWidth variant="outlined" startIcon={<FacebookIcon style={{color: "#4267B2"}} />} size="large" onClick={() => singleSignOn("facebook")} disabled={processing}>
                             <Typography component="span" style={{width: `${btWidth}`}}>
                                 Sign In With Facebook
                             </Typography>
                         </Button>
                     }
-                    {providers && providers.microsoft && 
+                    {providers && providers.microsoft &&
                         <Button type="button" fullWidth variant="outlined" startIcon={<img src={microsoftSvg} width="16" alt="Microsoft" />} size="large" onClick={() => singleSignOn("microsoft")} disabled={processing}>
                             <Typography component="span" style={{width: `${btWidth}`}}>
                                 Sign In With Microsoft
                             </Typography>
                         </Button>
                     }
-                    {providers && providers.apple && 
+                    {providers && providers.apple &&
                         <Button type="button" fullWidth variant="outlined" startIcon={<AppleIcon style={{color: "#555555"}} />} size="large" onClick={() => singleSignOn("apple")} disabled={processing}>
                             <Typography component="span" style={{width: `${btWidth}`}}>
                                 Sign In With Apple
                             </Typography>
                         </Button>
                     }
-                    {providers && providers.twitter && 
+                    {providers && providers.twitter &&
                         <Button type="button" fullWidth variant="outlined" startIcon={<TwitterIcon style={{color: "#1DA1F2"}} />} size="large" onClick={() => singleSignOn("twitter")} disabled={processing}>
                             <Typography component="span" style={{width: `${btWidth}`}}>
                                 Sign In With Twitter
                             </Typography>
                         </Button>
                     }
-                    {providers && providers.github && 
+                    {providers && providers.github &&
                         <Button type="button" fullWidth variant="outlined" startIcon={<GitHubIcon style={{color: "#000000"}} />} size="large" onClick={() => singleSignOn("github")} disabled={processing}>
                             <Typography component="span" style={{width: `${btWidth}`}}>
                                 Sign In With Github
