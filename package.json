@@ -1,5 +1,5 @@
 {
-  "name": "@fireactjs/core",
+  "name": "my-fork",
   "version": "1.1.2",
   "private": false,
   "author": "Chaoming Li",
@@ -21,7 +21,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fireactjs/core.git"
+    "url": "git+https://github.com/danielmoi/fireactjs-core.git"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1"
